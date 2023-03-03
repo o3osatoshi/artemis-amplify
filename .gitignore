@@ -144,15 +144,15 @@ project.xcworkspace
 /packages/rn-tester/android/app/gradle/
 /packages/rn-tester/android/app/gradlew
 /packages/rn-tester/android/app/gradlew.bat
-/ReactAndroid/build/
-/ReactAndroid/.cxx/
-/ReactAndroid/gradle/
-/ReactAndroid/gradlew
-/ReactAndroid/gradlew.bat
-/ReactAndroid/external-artifacts/build/
-/ReactAndroid/external-artifacts/artifacts/
-/ReactAndroid/hermes-engine/build/
-/ReactAndroid/hermes-engine/.cxx/
+/mobile/android/build/
+/mobile/android/.cxx/
+/mobile/android/gradle/
+/mobile/android/gradlew
+/mobile/android/gradlew.bat
+/mobile/android/external-artifacts/build/
+/mobile/android/external-artifacts/artifacts/
+/mobile/android/hermes-engine/build/
+/mobile/android/hermes-engine/.cxx/
 /android/app/build/
 /android/build/
 
@@ -161,8 +161,8 @@ project.xcworkspace
 buck-out
 /.lsp.buckd
 /.lsp-buck-out
-/ReactAndroid/src/main/jni/prebuilt/lib/
-/ReactAndroid/src/main/gen
+/mobile/android/src/main/jni/prebuilt/lib/
+/mobile/android/src/main/gen
 
 ## Android Studio
 .project
@@ -187,7 +187,7 @@ node_modules
 package-lock.json
 
 ## Test generated files
-/ReactAndroid/src/androidTest/assets/AndroidTestBundle.js
+/mobile/android/src/androidTest/assets/AndroidTestBundle.js
 *.js.meta
 
 /coverage
@@ -216,9 +216,9 @@ package-lock.json
 /vendor
 
 ## iOS / CocoaPods
-/ios/build/
-/ios/Pods/
-/ios/Podfile.lock
+/mobile/ios/build/
+/mobile/ios/Pods/
+/mobile/ios/Podfile.lock
 /packages/rn-tester/Gemfile.lock
 
 ## Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
