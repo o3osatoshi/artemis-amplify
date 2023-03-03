@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/api/p3/players",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"walletAddress\":\"abcd\", \"msg\":\"Hello from the event.json body\"}"
+}

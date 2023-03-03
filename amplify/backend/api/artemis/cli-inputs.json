@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/api/p3/players": {
+      "name": "/api/p3/players",
+      "lambdaFunction": "phase3",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
