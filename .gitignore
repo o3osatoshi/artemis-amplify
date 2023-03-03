@@ -253,6 +253,7 @@ package-lock.json
 # Amplify
 
 /amplify/team-provider-info.json
+/amplify/backend/function/phase3/phase3-cloudformation-template.json
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
