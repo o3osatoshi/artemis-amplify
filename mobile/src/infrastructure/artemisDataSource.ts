@@ -4,13 +4,15 @@ import axios, {
   AxiosRequestConfig,
   AxiosRequestHeaders,
 } from 'axios';
-import {ARTEMIS_BASE_URL} from '@env';
+import {API_GATEWAY_BASE_URL, API_GATEWAY_KEY} from '@env';
 
 export default class ArtemisDataSource {
   baseURL: string;
+  apiKey: string;
 
   constructor() {
-    this.baseURL = `${ARTEMIS_BASE_URL}`;
+    this.baseURL = `${API_GATEWAY_BASE_URL}`;
+    this.apiKey = `${API_GATEWAY_KEY}`;
   }
 
   async _call(
@@ -19,6 +21,7 @@ export default class ArtemisDataSource {
     headers: AxiosRequestHeaders = {},
     data: object | null = null,
   ): Promise<any> {
+    Object.assign(headers, {'x-api-key': this.apiKey});
     const config: AxiosRequestConfig = {
       method: method,
       baseURL: this.baseURL,
