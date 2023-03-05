@@ -34,7 +34,7 @@ export default class ArtemisDataSource {
   }
 
   async getP3Players(): Promise<object> {
-    return this._call('GET', '/api/p3/players/test_from_mobile6').then(
+    return this._call('GET', '/api/p3/players/0xde0').then(
       (response: AxiosResponse) => {
         console.log(response.data);
         return response.data;
