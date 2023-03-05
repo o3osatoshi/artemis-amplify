@@ -1,6 +1,6 @@
 {
-  "pluginId": "amplify-nodejs-function-runtime-provider",
-  "functionRuntime": "nodejs",
-  "useLegacyBuild": true,
-  "defaultEditorFile": "src/app.js"
+  "pluginId": "amplify-go-function-runtime-provider",
+  "functionRuntime": "go1.x",
+  "useLegacyBuild": false,
+  "defaultEditorFile": "src/main.go"
 }

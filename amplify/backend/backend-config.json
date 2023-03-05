@@ -1,6 +1,6 @@
 {
   "api": {
-    "artemis": {
+    "phase3": {
       "dependsOn": [
         {
           "attributes": [
@@ -18,20 +18,6 @@
   "function": {
     "phase3": {
       "build": true,
-      "dependsOn": [
-        {
-          "attributeEnvMap": {
-            "Arn": "TABLE_ARN",
-            "Name": "TABLE_NAME"
-          },
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "storage",
-          "resourceName": "artemis"
-        }
-      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -52,12 +38,6 @@
           "resourceName": "phase3"
         }
       ]
-    }
-  },
-  "storage": {
-    "artemis": {
-      "providerPlugin": "awscloudformation",
-      "service": "DynamoDB"
     }
   }
 }
