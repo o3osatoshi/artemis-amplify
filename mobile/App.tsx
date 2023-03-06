@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
-import LearnMoreLinks from './src/components/LearnMoreLinks';
+import ButtonMetaMask from './src/components/ButtonMetaMask';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,12 +26,11 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <LearnMoreLinks />
+          <ButtonMetaMask />
         </View>
       </ScrollView>
     </SafeAreaView>
