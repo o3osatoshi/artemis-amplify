@@ -15,6 +15,8 @@ import LearnMoreLinks from './src/components/LearnMoreLinks';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+import * as Linking from 'expo-linking';
+
 // @ts-ignore
 function HomeScreen({navigation}) {
   const isDarkMode = useColorScheme() === 'dark';
@@ -75,9 +77,14 @@ function DetailsScreen({route, navigation}) {
 
 const Stack = createNativeStackNavigator();
 
+const prefix = Linking.createURL('/');
+
 function App(): JSX.Element {
+  const linking = {
+    prefixes: [prefix],
+  };
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
