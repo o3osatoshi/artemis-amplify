@@ -1,9 +1,16 @@
 version: 1
 backend:
   phases:
+    preBuild:
+      commands:
+        - cd ./amplify/backend/function/phase3/src
     build:
       commands:
+        - yarn build
         - amplifyPush --simple
+    postBuild:
+      commands:
+        - cd -
 frontend:
   phases:
     preBuild:
@@ -13,7 +20,7 @@ frontend:
       commands:
         - yarn build
   artifacts:
-    baseDirectory: /build
+    baseDirectory: ./build
     files:
       - '**/*'
   cache:
