@@ -8,15 +8,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd interface
         - yarn install --frozen-lockfile
     build:
       commands:
         - yarn build
   artifacts:
+    baseDirectory: /build
     files:
-      - build
-    baseDirectory: interface
+      - '**/*'
   cache:
     paths:
       - node_modules/**/*
