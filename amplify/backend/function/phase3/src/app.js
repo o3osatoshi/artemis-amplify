@@ -20,7 +20,6 @@ let tableName = "p3Player";
 let dynamodb;
 if (process.env.ENV && process.env.ENV !== "NONE") {
   tableName = tableName + '-' + process.env.ENV;
-  console.log(tableName)
   dynamodb = new AWS.DynamoDB.DocumentClient({
     endpoint: process.env.DDB_ENDPOINT
   });

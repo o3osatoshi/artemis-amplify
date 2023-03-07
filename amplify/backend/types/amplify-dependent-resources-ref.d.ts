@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "phase3": {
+    "artemis": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"

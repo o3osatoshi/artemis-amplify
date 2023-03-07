@@ -1,6 +1,6 @@
 {
   "api": {
-    "phase3": {
+    "artemis": {
       "dependsOn": [
         {
           "attributes": [
