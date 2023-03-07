@@ -1,0 +1,14 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd interface
+        - yarn install --frozen-lockfile
+    build:
+      commands:
+        - build:dev
+  artifacts:
+    files:
+      - build
+    baseDirectory: build
