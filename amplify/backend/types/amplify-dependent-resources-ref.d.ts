@@ -15,14 +15,6 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     }
   },
-  "hosting": {
-    "S3AndCloudFront": {
-      "HostingBucketName": "string",
-      "Region": "string",
-      "S3BucketSecureURL": "string",
-      "WebsiteURL": "string"
-    }
-  },
   "storage": {
     "artemis": {
       "Arn": "string",
