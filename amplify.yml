@@ -8,10 +8,8 @@ backend:
     build:
       commands:
         - yarn build
-        - amplifyPush --simple
-    postBuild:
-      commands:
         - cd -
+        - amplifyPush --simple
 frontend:
   phases:
     preBuild:
