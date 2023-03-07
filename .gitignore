@@ -144,15 +144,15 @@ project.xcworkspace
 /packages/rn-tester/android/app/gradle/
 /packages/rn-tester/android/app/gradlew
 /packages/rn-tester/android/app/gradlew.bat
-/ReactAndroid/build/
-/ReactAndroid/.cxx/
-/ReactAndroid/gradle/
-/ReactAndroid/gradlew
-/ReactAndroid/gradlew.bat
-/ReactAndroid/external-artifacts/build/
-/ReactAndroid/external-artifacts/artifacts/
-/ReactAndroid/hermes-engine/build/
-/ReactAndroid/hermes-engine/.cxx/
+/mobile/android/build/
+/mobile/android/.cxx/
+/mobile/android/gradle/
+/mobile/android/gradlew
+/mobile/android/gradlew.bat
+/mobile/android/external-artifacts/build/
+/mobile/android/external-artifacts/artifacts/
+/mobile/android/hermes-engine/build/
+/mobile/android/hermes-engine/.cxx/
 /android/app/build/
 /android/build/
 
@@ -161,8 +161,8 @@ project.xcworkspace
 buck-out
 /.lsp.buckd
 /.lsp-buck-out
-/ReactAndroid/src/main/jni/prebuilt/lib/
-/ReactAndroid/src/main/gen
+/mobile/android/src/main/jni/prebuilt/lib/
+/mobile/android/src/main/gen
 
 ## Android Studio
 .project
@@ -187,7 +187,7 @@ node_modules
 package-lock.json
 
 ## Test generated files
-/ReactAndroid/src/androidTest/assets/AndroidTestBundle.js
+/mobile/android/src/androidTest/assets/AndroidTestBundle.js
 *.js.meta
 
 /coverage
@@ -216,9 +216,9 @@ package-lock.json
 /vendor
 
 ## iOS / CocoaPods
-/ios/build/
-/ios/Pods/
-/ios/Podfile.lock
+/mobile/ios/build/
+/mobile/ios/Pods/
+/mobile/ios/Podfile.lock
 /packages/rn-tester/Gemfile.lock
 
 ## Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
@@ -250,7 +250,47 @@ package-lock.json
 .metro-health-check*
 
 
+# React
+
+.DS_STORE
+scripts/flow/*/.flowconfig
+.flowconfig
+*~
+*.pyc
+.grunt
+_SpecRunner.html
+__benchmarks__
+build/
+remote-repo/
+coverage/
+.module-cache
+fixtures/dom/public/react-dom.js
+fixtures/dom/public/react.js
+test/the-files-to-test.generated.js
+*.log*
+chrome-user-data
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+packages/react-devtools-core/dist
+packages/react-devtools-extensions/chrome/build
+packages/react-devtools-extensions/chrome/*.crx
+packages/react-devtools-extensions/chrome/*.pem
+packages/react-devtools-extensions/firefox/build
+packages/react-devtools-extensions/firefox/*.xpi
+packages/react-devtools-extensions/firefox/*.pem
+packages/react-devtools-extensions/shared/build
+packages/react-devtools-extensions/.tempUserDataDir
+packages/react-devtools-inline/dist
+packages/react-devtools-shell/dist
+packages/react-devtools-timeline/dist
+
+
 # Amplify
+
+/amplify/team-provider-info.json
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
@@ -273,4 +313,10 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
-/amplify/team-provider-info.json
+
+
+# Original
+
+.env
+.env.dev
+/docker/dynamodb/

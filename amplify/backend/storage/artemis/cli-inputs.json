@@ -1,0 +1,10 @@
+{
+  "resourceName": "artemis",
+  "tableName": "p3Player",
+  "partitionKey": {
+    "fieldName": "walletAddress",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
