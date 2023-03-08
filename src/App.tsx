@@ -1,14 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import ApiCall from "./components/ApiCall";
+import User from "./views/User";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <header>
         <ApiCall />
+        <User />
       </header>
-    </div>
+    </>
   );
 }
 
