@@ -1,8 +1,14 @@
 version: 1
 backend:
   phases:
+    preBuild:
+      commands:
+        - cd ./amplify/backend/function/phase3/src
+        - yarn install --frozen-lockfile
     build:
       commands:
+        - yarn build
+        - cd -
         - amplifyPush --simple
 frontend:
   phases:
@@ -13,7 +19,7 @@ frontend:
       commands:
         - yarn build
   artifacts:
-    baseDirectory: /build
+    baseDirectory: ./build
     files:
       - '**/*'
   cache:
