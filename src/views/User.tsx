@@ -1,6 +1,7 @@
 import React from "react";
 import { ChainId, ExternallyOwnedAccounts } from "../domain/model/type";
 import MetaMask from "../components/MetaMask";
+import NFC from "../components/NFC";
 
 export default class User extends React.Component<IProps, IState> {
   constructor(props: IProps) {
@@ -39,6 +40,7 @@ export default class User extends React.Component<IProps, IState> {
           chainId={this.state.chainId}
           setChainId={this.setChainId}
         />
+        <NFC />
       </>
     );
   }
