@@ -31,6 +31,21 @@ export default class ButtonSaveLocation extends React.Component<
   }
 
   async saveLocation() {
+    if (!this.props.accounts[0]) {
+      const message = "Please connect to MetaMask.";
+      alert(message);
+      console.error(message);
+      return;
+    }
+    if (
+      this.state.geolocationCoordinates.latitude === 0 &&
+      this.state.geolocationCoordinates.longitude === 0
+    ) {
+      const message = "Please allow geolocation.";
+      alert(message);
+      console.error(message);
+      return;
+    }
     const p3Player: P3Player = {
       walletAddress: this.props.accounts[0],
       artifacts: [],

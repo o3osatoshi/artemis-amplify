@@ -1,8 +1,8 @@
 {
-  "httpMethod": "POST",
-  "path": "/api/p3/players",
+  "httpMethod": "PUT",
+  "path": "/api/p3/players/abcd",
   "headers": {
     "Content-Type": "application/json"
   },
-  "body": "{\"walletAddress\":\"abcd\", \"msg\":\"Hello from the event.json body\"}"
+  "body": "{\"walletAddress\": \"0xde3\",\"artifactIds\": [\"1\", \"2\"],\"location\": {\"id\": {\"type\": \"beacon\",\"value\": \"DC:0D\"},\"type\": \"point\",\"coordinates\": [\"1\", \"2\"]}}"
 }

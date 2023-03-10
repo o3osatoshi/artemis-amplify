@@ -5,8 +5,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log("tableName: " + process.env.ENV);
-
 /**
  * @type {import('http').Server}
  */

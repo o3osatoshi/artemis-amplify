@@ -43,12 +43,12 @@ export default class ArtemisDataSource {
     const data = { p3Player: p3Player };
     return this._call("PUT", url, {}, data).then(
       (response: AxiosResponse<PutP3PlayersRes>) => {
-        return response.data.artifacts;
+        return response.data.p3Artifacts;
       }
     );
   }
 }
 
 interface PutP3PlayersRes {
-  artifacts: P3Artifacts;
+  p3Artifacts: P3Artifacts;
 }

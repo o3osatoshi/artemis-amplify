@@ -10,6 +10,7 @@
     "start:local:watch": "concurrently \"npx tsc --watch\" \"nodemon -q -r dotenv/config index.js dotenv_config_path=.env.local\""
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.288.0",
     "aws-serverless-express": "^3.3.5",
     "body-parser": "^1.19.1",
     "dotenv": "^16.0.3",
