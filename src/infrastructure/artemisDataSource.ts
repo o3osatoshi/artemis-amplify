@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse, Method } from "axios";
+import { P3Artifacts, P3Player } from "../domain/model/type";
 
 export default class ArtemisDataSource {
   private readonly env: string;
@@ -22,7 +23,6 @@ export default class ArtemisDataSource {
     Object.assign(headers, { "x-api-key": this.apiKey });
     if (this.env === "local") {
       const xApigatewayHeader = encodeURIComponent(JSON.stringify(data));
-      console.log(xApigatewayHeader);
       Object.assign(headers, {
         "x-apigateway-event": xApigatewayHeader,
         "x-apigateway-context": xApigatewayHeader,
@@ -35,17 +35,20 @@ export default class ArtemisDataSource {
       headers: headers,
       data: data,
     };
-    console.log(config);
     return axios(config);
   }
 
-  async getP3Players(): Promise<object> {
-    console.log("getP3Players");
-    return this._call("GET", "/api/p3/players/0xde3").then(
-      (response: AxiosResponse) => {
-        console.log(response.data);
-        return response.data;
+  async putP3Players(p3Player: P3Player): Promise<P3Artifacts> {
+    const url = `/api/p3/players/${p3Player.walletAddress}`;
+    const data = { p3Player: p3Player };
+    return this._call("PUT", url, {}, data).then(
+      (response: AxiosResponse<PutP3PlayersRes>) => {
+        return response.data.artifacts;
       }
     );
   }
+}
+
+interface PutP3PlayersRes {
+  artifacts: P3Artifacts;
 }

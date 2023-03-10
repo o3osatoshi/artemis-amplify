@@ -1,7 +1,7 @@
 import React from "react";
-import { ChainId, ExternallyOwnedAccounts } from "../domain/model/type";
-import MetaMask from "../components/MetaMask";
-import Geolocate from "../components/Geolocate";
+import { ChainId, ExternallyOwnedAccounts } from "../../domain/model/type";
+import ButtonMetaMask from "../../components/ButtonMetaMask";
+import ButtonSaveLocation from "../../components/p3/ButtonSaveLocation";
 
 export default class User extends React.Component<IProps, IState> {
   constructor(props: IProps) {
@@ -34,13 +34,13 @@ export default class User extends React.Component<IProps, IState> {
     return (
       <>
         <h2>User</h2>
-        <MetaMask
+        <ButtonMetaMask
           accounts={this.state.accounts}
           setAccounts={this.setAccounts}
           chainId={this.state.chainId}
           setChainId={this.setChainId}
         />
-        <Geolocate />
+        <ButtonSaveLocation accounts={this.state.accounts} />
       </>
     );
   }

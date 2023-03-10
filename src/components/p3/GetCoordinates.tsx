@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGeolocated } from "react-geolocated";
 
-const Demo = () => {
+export default function GetCoordinates(props: IProps) {
+  const [coordinates, setCoordinates] =
+    React.useState<GeolocationCoordinates>();
+
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
       positionOptions: {
@@ -9,6 +12,22 @@ const Demo = () => {
       },
       userDecisionTimeout: 5000,
     });
+
+  useEffect(() => {
+    if (isGeolocationAvailable && isGeolocationEnabled) {
+      if (coords !== undefined) {
+        if (coordinates === coords) return;
+        setCoordinates(coords);
+        props.setCoordinates(coords);
+      }
+    }
+  }, [
+    isGeolocationAvailable,
+    isGeolocationEnabled,
+    coords,
+    coordinates,
+    props,
+  ]);
 
   return !isGeolocationAvailable ? (
     <div>Your browser does not support Geolocation</div>
@@ -42,6 +61,8 @@ const Demo = () => {
   ) : (
     <div>Getting the location data&hellip; </div>
   );
-};
+}
 
-export default Demo;
+interface IProps {
+  setCoordinates: (coordinates: GeolocationCoordinates) => void;
+}

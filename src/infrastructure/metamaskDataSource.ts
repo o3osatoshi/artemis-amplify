@@ -9,7 +9,7 @@ export class MetaMaskDataSource {
   constructor() {
     this.metaMaskSDK = new MetaMaskSDK();
     this.ethereum = this.metaMaskSDK.getProvider();
-    if (!this.ethereum.isMetaMask) alert("Please install MetaMask");
+    if (!this.ethereum.isMetaMask) alert("Please install ButtonMetaMask");
     this.web3 = new Web3(this.ethereum);
   }
 
