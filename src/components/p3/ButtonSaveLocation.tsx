@@ -47,7 +47,6 @@ export default class ButtonSaveLocation extends React.Component<
   }
 
   setCoordinates(coordinates: GeolocationCoordinates) {
-    console.log(coordinates);
     this.setState((prevState) => {
       const nextState: IState = prevState;
       nextState.geolocationCoordinates = coordinates;

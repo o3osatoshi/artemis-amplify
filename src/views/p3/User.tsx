@@ -2,6 +2,7 @@ import React from "react";
 import { ChainId, ExternallyOwnedAccounts } from "../../domain/model/type";
 import ButtonMetaMask from "../../components/ButtonMetaMask";
 import ButtonSaveLocation from "../../components/p3/ButtonSaveLocation";
+import ButtonReload from "../../components/ButtonReload";
 
 export default class User extends React.Component<IProps, IState> {
   constructor(props: IProps) {
@@ -34,6 +35,7 @@ export default class User extends React.Component<IProps, IState> {
     return (
       <>
         <h2>User</h2>
+        <ButtonReload />
         <ButtonMetaMask
           accounts={this.state.accounts}
           setAccounts={this.setAccounts}
