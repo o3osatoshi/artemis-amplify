@@ -25,6 +25,8 @@ export default class UseCase {
       Item: p3PlayerEntity as Record<keyof P3PlayerDomain, AttributeValue>,
     };
     try {
+      console.log("params", params);
+      console.log("location", params.Item.location);
       const data = await this.client.send(new PutItemCommand(params));
       console.log(data);
     } catch (err) {

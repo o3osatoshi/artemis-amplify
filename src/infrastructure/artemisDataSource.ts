@@ -41,6 +41,7 @@ export default class ArtemisDataSource {
   async putP3Players(p3Player: P3Player): Promise<P3Artifacts> {
     const url = `/api/p3/players/${p3Player.walletAddress}`;
     const data = { p3Player: p3Player };
+    console.log("putP3Players", url, data);
     return this._call("PUT", url, {}, data).then(
       (response: AxiosResponse<PutP3PlayersRes>) => {
         return response.data.p3Artifacts;

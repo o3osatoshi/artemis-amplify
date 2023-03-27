@@ -11,7 +11,11 @@ export class P3Player {
 
   constructor(p3Player: P3PlayerDomain) {
     this.walletAddress = { S: p3Player.walletAddress };
-    this.artifacts = { SS: p3Player.artifacts };
+    if (p3Player.artifacts.length === 0) {
+      this.artifacts = { SS: [""] };
+    } else {
+      this.artifacts = { SS: p3Player.artifacts };
+    }
     this.location = {
       M: {
         id: {
